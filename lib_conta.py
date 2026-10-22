@@ -1,6 +1,6 @@
 #Blibioteca de funções da conta corrente
 conta_saldo = 0
-conta_extrato = ""
+conta_extrato = None
 
 def depositar(valor):
 
@@ -10,7 +10,10 @@ def depositar(valor):
         global conta_extrato
 
         conta_saldo += valor
-        conta_extrato += f"Deposito efetuado no valor de R$ {valor}\n"
+        if conta_extrato is None:
+            conta_extrato = f"Deposito efetuado no valor de R$ {valor}\n"
+        else:
+            conta_extrato += f"Deposito efetuado no valor de R$ {valor}\n"
 
         return True
     
@@ -31,6 +34,9 @@ def sacar(valor):
     return False
 
 def extrato():
+    if conta_extrato is None:
+        return f"Extrato vazio"
+    
     return conta_extrato
 
 def saldo():

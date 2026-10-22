@@ -16,9 +16,11 @@ while True:
     exibir_menu()
     select = input("Digite a opção desejada: ")
 
+    #Sair
     if select == '0':
         break
 
+    #Deposito
     elif select == '1':
         try:
             #Aceitar apenas números
@@ -33,3 +35,22 @@ while True:
             print("Digite apenas números")
             input("Pressione enter para continuar...")
             continue
+
+    elif select == '3':
+        print("\n===================")
+        print(f"Saldo: R$ {saldo():.2f}")
+        print("====================")
+        input("Pressione enter para continuar...")
+        continue
+
+    elif select == '4':
+        print("\n===================\n")
+        print(extrato())
+        print("====================")
+        input("Pressione enter para continuar...")
+        continue
+
+    else:
+        print("Opção Invalida")
+        input("Pressione enter para continuar...")
+        continue
