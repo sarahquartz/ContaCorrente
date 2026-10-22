@@ -1,8 +1,8 @@
-#Blibiote de funções da conta corrente
+#Blibioteca de funções da conta corrente
 conta_saldo = 0
 conta_extrato = ""
 
-def deposito(valor):
+def depositar(valor):
 
     if valor > 0:
 
@@ -10,13 +10,13 @@ def deposito(valor):
         global conta_extrato
 
         conta_saldo += valor
-        conta_extrato += f"Deposito efetuado no valor de R$ {valor}"
+        conta_extrato += f"Deposito efetuado no valor de R$ {valor}\n"
 
         return True
     
     return False
 
-def saque(valor):
+def sacar(valor):
     
     global conta_saldo
     global conta_extrato
@@ -24,7 +24,7 @@ def saque(valor):
     if valor > 0 and conta_saldo > valor:
 
         conta_saldo -= valor
-        conta_extrato += f"Saque efetuado no valor de R$ {valor}"
+        conta_extrato += f"Saque efetuado no valor de R$ {valor}\n"
 
         return True
     
